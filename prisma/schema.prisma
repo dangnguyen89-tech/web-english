@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id           String             @id @default(cuid())
+  email        String             @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  wordProgress UserWordProgress[]
+  quizAttempts QuizAttempt[]
+}
+
+model Word {
+  id         String             @id @default(cuid())
+  term       String             @unique
+  definition String
+  example    String
+  level      WordLevel          @default(BEGINNER)
+  createdAt  DateTime           @default(now())
+  progress   UserWordProgress[]
+}
+
+model UserWordProgress {
+  id           String       @id @default(cuid())
+  userId       String
+  wordId       String
+  status       WordStatus   @default(NEW)
+  lastReviewed DateTime     @default(now())
+  user         User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  word         Word         @relation(fields: [wordId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, wordId])
+  @@index([userId])
+}
+
+model Quiz {
+  id        String         @id @default(cuid())
+  title     String
+  level     WordLevel      @default(BEGINNER)
+  createdAt DateTime       @default(now())
+  questions QuizQuestion[]
+  attempts  QuizAttempt[]
+}
+
+model QuizQuestion {
+  id      String       @id @default(cuid())
+  quizId  String
+  type    QuestionType
+  content Json
+  quiz    Quiz         @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([quizId])
+}
+
+model QuizAttempt {
+  id          String   @id @default(cuid())
+  userId      String
+  quizId      String
+  score       Int
+  total       Int
+  completedAt DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([quizId])
+}
+
+enum WordLevel {
+  BEGINNER
+  INTERMEDIATE
+}
+
+enum WordStatus {
+  NEW
+  LEARNING
+  KNOWN
+}
+
+enum QuestionType {
+  MULTIPLE_CHOICE
+  FILL_BLANK
+}
