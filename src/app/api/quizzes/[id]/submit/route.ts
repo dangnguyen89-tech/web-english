@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { requireAuth } from "@/lib/api-auth";
 import { quizSubmitSchema } from "@/lib/validators";
-import type { FillBlankContent, MultipleChoiceContent } from "@/components/QuizQuestion";
+import type { FillBlankContent, MultipleChoiceContent } from "@/lib/quiz-types";
 
 function gradeAnswer(
   type: "MULTIPLE_CHOICE" | "FILL_BLANK",

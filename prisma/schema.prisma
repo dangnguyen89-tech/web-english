@@ -24,6 +24,8 @@ model Word {
   term       String             @unique
   definition String
   example    String
+  ipa        String?
+  imageUrl   String?
   level      WordLevel          @default(BEGINNER)
   createdAt  DateTime           @default(now())
   progress   UserWordProgress[]

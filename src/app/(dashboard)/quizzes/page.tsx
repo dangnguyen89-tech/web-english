@@ -41,11 +41,16 @@ export default function QuizzesPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Quizzes</h1>
-        <p className="mt-2 text-muted-foreground">
-          Test your English with multiple choice and fill-in-the-blank questions.
-        </p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Quizzes</h1>
+          <p className="mt-2 text-muted-foreground">
+            Test your English with multiple choice and fill-in-the-blank questions.
+          </p>
+        </div>
+        <Button asChild variant="outline">
+          <Link href="/add-content">Create quiz</Link>
+        </Button>
       </div>
 
       {error && <p className="text-sm text-destructive">{error}</p>}

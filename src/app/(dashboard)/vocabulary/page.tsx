@@ -1,7 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { WordCard, type WordCardData, type WordStatus } from "@/components/WordCard";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -64,11 +66,16 @@ export default function VocabularyPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">Vocabulary</h1>
-        <p className="mt-2 text-muted-foreground">
-          Browse words, read definitions, and mark your learning progress.
-        </p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="text-3xl font-bold">Vocabulary</h1>
+          <p className="mt-2 text-muted-foreground">
+            Browse words, read definitions, and mark your learning progress.
+          </p>
+        </div>
+        <Button asChild variant="outline">
+          <Link href="/add-content">Add new word</Link>
+        </Button>
       </div>
 
       <div className="flex flex-col gap-3 sm:flex-row">

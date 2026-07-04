@@ -1,0 +1,177 @@
+import type { WordLevel } from "@prisma/client";
+
+export type SeedWord = {
+  term: string;
+  definition: string;
+  example: string;
+  level: WordLevel;
+};
+
+export const seedWords: SeedWord[] = [
+  // --- BEGINNER: Greetings & Basics ---
+  { term: "hello", definition: "A greeting used when meeting someone", example: "Hello, how are you today?", level: "BEGINNER" },
+  { term: "goodbye", definition: "A word said when leaving", example: "She waved and said goodbye.", level: "BEGINNER" },
+  { term: "please", definition: "Used to make a request polite", example: "Could you help me, please?", level: "BEGINNER" },
+  { term: "thank you", definition: "An expression of gratitude", example: "Thank you for your help.", level: "BEGINNER" },
+  { term: "sorry", definition: "Used to apologize", example: "I am sorry for being late.", level: "BEGINNER" },
+  { term: "yes", definition: "Used to agree or confirm", example: "Yes, I would like some tea.", level: "BEGINNER" },
+  { term: "no", definition: "Used to refuse or deny", example: "No, thank you.", level: "BEGINNER" },
+  { term: "welcome", definition: "A greeting to someone arriving", example: "Welcome to our home!", level: "BEGINNER" },
+
+  // --- BEGINNER: People & Family ---
+  { term: "family", definition: "A group of related people", example: "My family lives in London.", level: "BEGINNER" },
+  { term: "friend", definition: "A person you know well and like", example: "She is my best friend.", level: "BEGINNER" },
+  { term: "mother", definition: "A female parent", example: "My mother cooks delicious meals.", level: "BEGINNER" },
+  { term: "father", definition: "A male parent", example: "His father works as a doctor.", level: "BEGINNER" },
+  { term: "child", definition: "A young person", example: "The child is playing in the park.", level: "BEGINNER" },
+  { term: "baby", definition: "A very young child", example: "The baby is sleeping peacefully.", level: "BEGINNER" },
+  { term: "man", definition: "An adult male person", example: "The man opened the door.", level: "BEGINNER" },
+  { term: "woman", definition: "An adult female person", example: "The woman smiled warmly.", level: "BEGINNER" },
+  { term: "people", definition: "Human beings in general", example: "Many people visited the museum.", level: "BEGINNER" },
+  { term: "name", definition: "What a person or thing is called", example: "What is your name?", level: "BEGINNER" },
+
+  // --- BEGINNER: Home & Places ---
+  { term: "house", definition: "A building where people live", example: "They bought a new house last year.", level: "BEGINNER" },
+  { term: "home", definition: "The place where someone lives", example: "I feel safe at home.", level: "BEGINNER" },
+  { term: "room", definition: "A part of a building with walls", example: "My room is on the second floor.", level: "BEGINNER" },
+  { term: "door", definition: "An entrance that opens and closes", example: "Please close the door.", level: "BEGINNER" },
+  { term: "window", definition: "An opening in a wall for light", example: "She looked out the window.", level: "BEGINNER" },
+  { term: "school", definition: "A place where students learn", example: "The children walk to school.", level: "BEGINNER" },
+  { term: "hospital", definition: "A place where sick people are treated", example: "He was taken to the hospital.", level: "BEGINNER" },
+  { term: "shop", definition: "A place where things are sold", example: "I bought bread at the shop.", level: "BEGINNER" },
+  { term: "city", definition: "A large town", example: "Tokyo is a very big city.", level: "BEGINNER" },
+  { term: "country", definition: "A nation with its own government", example: "Japan is a beautiful country.", level: "BEGINNER" },
+
+  // --- BEGINNER: Food & Drink ---
+  { term: "water", definition: "A clear liquid essential for life", example: "I drink water every morning.", level: "BEGINNER" },
+  { term: "food", definition: "Something people eat", example: "The food at this restaurant is delicious.", level: "BEGINNER" },
+  { term: "bread", definition: "A baked food made from flour", example: "She bought fresh bread.", level: "BEGINNER" },
+  { term: "rice", definition: "Small white or brown grains eaten as food", example: "We eat rice with every meal.", level: "BEGINNER" },
+  { term: "milk", definition: "A white liquid from cows", example: "The child drank a glass of milk.", level: "BEGINNER" },
+  { term: "coffee", definition: "A hot drink made from roasted beans", example: "He drinks coffee every morning.", level: "BEGINNER" },
+  { term: "tea", definition: "A hot drink made from leaves", example: "Would you like a cup of tea?", level: "BEGINNER" },
+  { term: "fruit", definition: "Sweet food that grows on plants", example: "Apples are my favorite fruit.", level: "BEGINNER" },
+  { term: "apple", definition: "A round red or green fruit", example: "She ate an apple for lunch.", level: "BEGINNER" },
+  { term: "meat", definition: "Animal flesh eaten as food", example: "They grilled meat for dinner.", level: "BEGINNER" },
+
+  // --- BEGINNER: Time ---
+  { term: "time", definition: "The ongoing sequence of events", example: "What time is the meeting?", level: "BEGINNER" },
+  { term: "day", definition: "A period of 24 hours", example: "It was a sunny day.", level: "BEGINNER" },
+  { term: "night", definition: "The dark part of the day", example: "The stars shine at night.", level: "BEGINNER" },
+  { term: "morning", definition: "The early part of the day", example: "I exercise every morning.", level: "BEGINNER" },
+  { term: "week", definition: "A period of seven days", example: "I will see you next week.", level: "BEGINNER" },
+  { term: "month", definition: "One of twelve parts of a year", example: "She visits her parents every month.", level: "BEGINNER" },
+  { term: "year", definition: "A period of twelve months", example: "Happy New Year!", level: "BEGINNER" },
+  { term: "today", definition: "This present day", example: "Today is my birthday.", level: "BEGINNER" },
+  { term: "tomorrow", definition: "The day after today", example: "The test is tomorrow.", level: "BEGINNER" },
+  { term: "yesterday", definition: "The day before today", example: "I met him yesterday.", level: "BEGINNER" },
+
+  // --- BEGINNER: Adjectives ---
+  { term: "happy", definition: "Feeling pleasure or contentment", example: "She felt happy after the good news.", level: "BEGINNER" },
+  { term: "sad", definition: "Feeling unhappy or sorrowful", example: "He was sad to leave his hometown.", level: "BEGINNER" },
+  { term: "big", definition: "Large in size", example: "They live in a big city.", level: "BEGINNER" },
+  { term: "small", definition: "Little in size", example: "The room is too small for a desk.", level: "BEGINNER" },
+  { term: "fast", definition: "Moving or happening quickly", example: "The train is very fast.", level: "BEGINNER" },
+  { term: "slow", definition: "Not moving quickly", example: "Traffic was slow this morning.", level: "BEGINNER" },
+  { term: "hot", definition: "Having a high temperature", example: "The coffee is too hot to drink.", level: "BEGINNER" },
+  { term: "cold", definition: "Having a low temperature", example: "It is cold outside in winter.", level: "BEGINNER" },
+  { term: "new", definition: "Recently made or discovered", example: "She bought a new phone.", level: "BEGINNER" },
+  { term: "old", definition: "Having existed for a long time", example: "This is an old building.", level: "BEGINNER" },
+  { term: "good", definition: "Of high quality or pleasant", example: "That was a good movie.", level: "BEGINNER" },
+  { term: "bad", definition: "Of poor quality or unpleasant", example: "The weather was bad yesterday.", level: "BEGINNER" },
+  { term: "beautiful", definition: "Very pleasing to look at", example: "The sunset was beautiful.", level: "BEGINNER" },
+  { term: "easy", definition: "Not difficult to do", example: "This exercise is easy.", level: "BEGINNER" },
+  { term: "hard", definition: "Difficult to do or understand", example: "The exam was very hard.", level: "BEGINNER" },
+
+  // --- BEGINNER: Verbs ---
+  { term: "learn", definition: "To gain knowledge or skill", example: "Children learn languages quickly.", level: "BEGINNER" },
+  { term: "speak", definition: "To say words aloud", example: "Can you speak English?", level: "BEGINNER" },
+  { term: "listen", definition: "To pay attention to sounds", example: "Please listen to the teacher.", level: "BEGINNER" },
+  { term: "read", definition: "To look at and understand written words", example: "I read the news every morning.", level: "BEGINNER" },
+  { term: "write", definition: "To form letters or words on paper", example: "She likes to write stories.", level: "BEGINNER" },
+  { term: "eat", definition: "To put food in your mouth and swallow", example: "We eat dinner at seven.", level: "BEGINNER" },
+  { term: "drink", definition: "To take liquid into your mouth", example: "Drink plenty of water.", level: "BEGINNER" },
+  { term: "sleep", definition: "To rest with eyes closed", example: "Babies sleep many hours.", level: "BEGINNER" },
+  { term: "walk", definition: "To move on foot", example: "I walk to work every day.", level: "BEGINNER" },
+  { term: "run", definition: "To move quickly on foot", example: "He runs in the park every morning.", level: "BEGINNER" },
+  { term: "work", definition: "Activity done to earn money", example: "He goes to work at eight o'clock.", level: "BEGINNER" },
+  { term: "play", definition: "To do something for enjoyment", example: "Children play in the garden.", level: "BEGINNER" },
+  { term: "help", definition: "To make it easier for someone", example: "Can you help me with this?", level: "BEGINNER" },
+  { term: "buy", definition: "To get something by paying money", example: "I need to buy groceries.", level: "BEGINNER" },
+  { term: "give", definition: "To hand something to someone", example: "Please give me the book.", level: "BEGINNER" },
+
+  // --- BEGINNER: Objects & Nature ---
+  { term: "book", definition: "Pages bound together for reading", example: "I read a book before bed.", level: "BEGINNER" },
+  { term: "phone", definition: "A device used to call or message people", example: "My phone battery is low.", level: "BEGINNER" },
+  { term: "car", definition: "A road vehicle with four wheels", example: "They drove the car to the beach.", level: "BEGINNER" },
+  { term: "money", definition: "Coins or notes used to buy things", example: "I don't have enough money.", level: "BEGINNER" },
+  { term: "sun", definition: "The star that gives Earth light and heat", example: "The sun rises in the east.", level: "BEGINNER" },
+  { term: "rain", definition: "Water falling from clouds", example: "Take an umbrella; it might rain.", level: "BEGINNER" },
+  { term: "tree", definition: "A tall plant with a trunk and branches", example: "Birds nest in the tree.", level: "BEGINNER" },
+  { term: "flower", definition: "The colorful part of a plant", example: "She picked a red flower.", level: "BEGINNER" },
+  { term: "dog", definition: "A common pet animal", example: "The dog wagged its tail.", level: "BEGINNER" },
+  { term: "cat", definition: "A small furry pet animal", example: "The cat slept on the sofa.", level: "BEGINNER" },
+  { term: "bird", definition: "An animal with feathers and wings", example: "A bird sang outside my window.", level: "BEGINNER" },
+  { term: "color", definition: "Red, blue, green, etc.", example: "What is your favorite color?", level: "BEGINNER" },
+  { term: "red", definition: "The color of blood or fire", example: "She wore a red dress.", level: "BEGINNER" },
+  { term: "blue", definition: "The color of the sky on a clear day", example: "The ocean looks blue.", level: "BEGINNER" },
+  { term: "green", definition: "The color of grass and leaves", example: "The park is full of green trees.", level: "BEGINNER" },
+
+  // --- INTERMEDIATE: Work & Study ---
+  { term: "travel", definition: "To go from one place to another", example: "They love to travel abroad.", level: "INTERMEDIATE" },
+  { term: "experience", definition: "Knowledge gained from doing something", example: "She has years of teaching experience.", level: "INTERMEDIATE" },
+  { term: "achieve", definition: "To successfully reach a goal", example: "He worked hard to achieve his dream.", level: "INTERMEDIATE" },
+  { term: "improve", definition: "To make or become better", example: "Practice will improve your pronunciation.", level: "INTERMEDIATE" },
+  { term: "challenge", definition: "Something difficult that tests ability", example: "Learning a language is a fun challenge.", level: "INTERMEDIATE" },
+  { term: "opportunity", definition: "A chance to do something", example: "This job is a great opportunity.", level: "INTERMEDIATE" },
+  { term: "decision", definition: "A choice made after thinking", example: "Making a decision can be hard.", level: "INTERMEDIATE" },
+  { term: "career", definition: "A person's course of professional life", example: "She built a successful career in medicine.", level: "INTERMEDIATE" },
+  { term: "interview", definition: "A formal meeting to assess a candidate", example: "He has a job interview tomorrow.", level: "INTERMEDIATE" },
+  { term: "salary", definition: "Money paid regularly for work", example: "Her salary increased this year.", level: "INTERMEDIATE" },
+  { term: "colleague", definition: "A person you work with", example: "My colleague helped me finish the report.", level: "INTERMEDIATE" },
+  { term: "deadline", definition: "The latest time something must be finished", example: "The project deadline is Friday.", level: "INTERMEDIATE" },
+  { term: "research", definition: "Careful study to discover facts", example: "She is doing research on climate change.", level: "INTERMEDIATE" },
+  { term: "graduate", definition: "To complete a degree at university", example: "He will graduate next spring.", level: "INTERMEDIATE" },
+  { term: "assignment", definition: "A task given as part of study", example: "I finished my assignment early.", level: "INTERMEDIATE" },
+
+  // --- INTERMEDIATE: Communication & Personality ---
+  { term: "communicate", definition: "To share information with others", example: "Good leaders communicate clearly.", level: "INTERMEDIATE" },
+  { term: "confident", definition: "Feeling sure about your abilities", example: "She became more confident after practice.", level: "INTERMEDIATE" },
+  { term: "creative", definition: "Able to produce original ideas", example: "He is a very creative designer.", level: "INTERMEDIATE" },
+  { term: "efficient", definition: "Working well without wasting time", example: "The new system is more efficient.", level: "INTERMEDIATE" },
+  { term: "generous", definition: "Willing to give more than expected", example: "Our neighbor is very generous.", level: "INTERMEDIATE" },
+  { term: "patient", definition: "Able to wait calmly", example: "Be patient while learning new skills.", level: "INTERMEDIATE" },
+  { term: "reliable", definition: "Able to be trusted", example: "She is a reliable team member.", level: "INTERMEDIATE" },
+  { term: "responsible", definition: "Having a duty to deal with something", example: "He is responsible for the project.", level: "INTERMEDIATE" },
+  { term: "curious", definition: "Eager to know or learn", example: "Curious students ask many questions.", level: "INTERMEDIATE" },
+  { term: "grateful", definition: "Feeling thankful", example: "I am grateful for your support.", level: "INTERMEDIATE" },
+  { term: "persuade", definition: "To convince someone to do or believe something", example: "She persuaded him to join the team.", level: "INTERMEDIATE" },
+  { term: "negotiate", definition: "To discuss to reach an agreement", example: "They negotiated a better price.", level: "INTERMEDIATE" },
+  { term: "apologize", definition: "To say sorry for a mistake", example: "He apologized for the delay.", level: "INTERMEDIATE" },
+  { term: "encourage", definition: "To give support or confidence", example: "Teachers encourage students to try.", level: "INTERMEDIATE" },
+  { term: "influence", definition: "The power to affect someone or something", example: "Social media has a strong influence.", level: "INTERMEDIATE" },
+
+  // --- INTERMEDIATE: Society & Environment ---
+  { term: "environment", definition: "The natural world around us", example: "We must protect the environment.", level: "INTERMEDIATE" },
+  { term: "community", definition: "A group of people living in one area", example: "The community organized a festival.", level: "INTERMEDIATE" },
+  { term: "culture", definition: "The customs and beliefs of a group", example: "Travel helps you learn about other cultures.", level: "INTERMEDIATE" },
+  { term: "pollution", definition: "Harmful substances in the environment", example: "Air pollution is a serious problem.", level: "INTERMEDIATE" },
+  { term: "recycle", definition: "To process used materials for reuse", example: "Please recycle plastic bottles.", level: "INTERMEDIATE" },
+  { term: "volunteer", definition: "To offer help without being paid", example: "She volunteers at the local shelter.", level: "INTERMEDIATE" },
+  { term: "tradition", definition: "A custom passed through generations", example: "It is a family tradition to eat together.", level: "INTERMEDIATE" },
+  { term: "democracy", definition: "Government by the people through voting", example: "Free elections are key to democracy.", level: "INTERMEDIATE" },
+  { term: "economy", definition: "The system of money and trade in a country", example: "The economy is growing steadily.", level: "INTERMEDIATE" },
+  { term: "technology", definition: "Scientific knowledge applied practically", example: "Technology changes how we live.", level: "INTERMEDIATE" },
+
+  // --- INTERMEDIATE: Abstract & Academic ---
+  { term: "analyze", definition: "To examine in detail", example: "Scientists analyze data carefully.", level: "INTERMEDIATE" },
+  { term: "conclude", definition: "To reach a decision or judgment", example: "We concluded that the plan would work.", level: "INTERMEDIATE" },
+  { term: "evidence", definition: "Facts that support a belief", example: "There is evidence that exercise helps.", level: "INTERMEDIATE" },
+  { term: "theory", definition: "An idea explaining how something works", example: "Einstein developed the theory of relativity.", level: "INTERMEDIATE" },
+  { term: "significant", definition: "Important or large enough to matter", example: "There was a significant improvement.", level: "INTERMEDIATE" },
+  { term: "approximately", definition: "Close to an exact number", example: "The trip takes approximately two hours.", level: "INTERMEDIATE" },
+  { term: "consequence", definition: "A result of an action", example: "Every choice has a consequence.", level: "INTERMEDIATE" },
+  { term: "priority", definition: "Something treated as most important", example: "Health should be your top priority.", level: "INTERMEDIATE" },
+  { term: "strategy", definition: "A plan to achieve a goal", example: "We need a clear marketing strategy.", level: "INTERMEDIATE" },
+  { term: "innovation", definition: "A new idea, method, or invention", example: "Innovation drives business growth.", level: "INTERMEDIATE" },
+];

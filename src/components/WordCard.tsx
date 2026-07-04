@@ -3,6 +3,9 @@
 import { BookOpen, CheckCircle2, CircleDashed } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { PronounceButton } from "@/components/PronounceButton";
+import { WordVisual } from "@/components/WordVisual";
+import { formatIpa } from "@/lib/pronunciation";
 import { cn } from "@/lib/utils";
 
 export type WordStatus = "NEW" | "LEARNING" | "KNOWN";
@@ -12,6 +15,8 @@ export interface WordCardData {
   term: string;
   definition: string;
   example: string;
+  ipa?: string | null;
+  imageUrl?: string | null;
   level: "BEGINNER" | "INTERMEDIATE";
   status?: WordStatus;
 }
@@ -31,18 +36,26 @@ const statusConfig: Record<WordStatus, { label: string; icon: typeof CircleDashe
 export function WordCard({ word, onStatusChange, loading }: WordCardProps) {
   const status = word.status ?? "NEW";
   const StatusIcon = statusConfig[status].icon;
+  const ipaDisplay = formatIpa(word.ipa);
 
   return (
-    <Card>
+    <Card className="overflow-hidden">
+      <WordVisual term={word.term} imageUrl={word.imageUrl} className="rounded-none border-0 border-b" />
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <CardTitle className="text-xl">{word.term}</CardTitle>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-2">
+              <CardTitle className="text-xl capitalize">{word.term}</CardTitle>
+              <PronounceButton text={word.term} mode="word" />
+            </div>
+            {ipaDisplay && (
+              <p className="mt-1 font-mono text-sm text-primary">{ipaDisplay}</p>
+            )}
             <CardDescription className="mt-1 capitalize">
               {word.level.toLowerCase()} level
             </CardDescription>
           </div>
-          <span className={cn("flex items-center gap-1 text-xs font-medium", statusConfig[status].className)}>
+          <span className={cn("flex shrink-0 items-center gap-1 text-xs font-medium", statusConfig[status].className)}>
             <StatusIcon className="h-3.5 w-3.5" />
             {statusConfig[status].label}
           </span>
@@ -54,7 +67,10 @@ export function WordCard({ word, onStatusChange, loading }: WordCardProps) {
           <p className="mt-1">{word.definition}</p>
         </div>
         <div>
-          <p className="text-sm font-medium text-muted-foreground">Example</p>
+          <div className="flex items-center gap-2">
+            <p className="text-sm font-medium text-muted-foreground">Example</p>
+            <PronounceButton text={word.example} mode="sentence" size="sm" />
+          </div>
           <p className="mt-1 italic text-foreground/90">&ldquo;{word.example}&rdquo;</p>
         </div>
         {onStatusChange && (
